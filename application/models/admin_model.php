@@ -1083,8 +1083,13 @@ class Admin_model extends CI_Model{
 
 	public function delete_student($student_id ='')
 	{
+		/*echo '<pre>';print_r($student_id);echo '</pre>';
+		die('yoho!');*/
+		$this->db->where('std_id', $student_id)->delete('repeat_student_result_info');
+		$this->db->where('std_id', $student_id)->delete('result_info');
 		$this->db->where('std_id', $student_id)->delete('student_exam_info');
 		$this->db->where('std_id', $student_id)->delete('student_info');
+
 		if ($this->db->affected_rows() > 0) {
 			return true;
 		}else{
