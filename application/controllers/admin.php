@@ -3359,8 +3359,8 @@ class Admin extends CI_Controller {
 	public function printDegree()
 	{
 		$degree_detail = $this->session->userdata('degree_detail');
-		// echo '<pre>';print_r($degree_detail);echo '</pre>';
-		// die();
+		/*echo '<pre>';print_r($degree_detail);echo '</pre>';
+		die();*/
 		if (empty($degree_detail) ) {
 			$this->session->set_flashdata('failure','دوبارہ کوشیش کریں شکریہ');
 			redirect('admin/degreeForm');
@@ -3370,8 +3370,9 @@ class Admin extends CI_Controller {
 		// echo 'exam id: '.$degree_detail['exam_id'];
 		$exam_class_grade = $this->admin_model->get_exam_class_grade($degree_detail['exam_id']);
 		$data['student_record'] = $this->admin_model->get_exam_students_for_degree_print($degree_detail['exam_id'],$degree_detail['exam_type'],$exam_class_grade);
-		// echo '<pre>';print_r($data['student_record']);echo '</pre>';
-		// die();
+		/*echo '<pre>';print_r($data['student_record']);echo '</pre>';
+		die('i am here');*/
+		$data['exam_class_grade'] =  $exam_class_grade;
 		$this->load->view('admin/print-degree-for-single-subject',$data);
 	
 	}// end function printDegree

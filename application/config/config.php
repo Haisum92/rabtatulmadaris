@@ -14,14 +14,14 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost:8080/rabta-ul-madaris/';
+$config['base_url']	= 'http://localhost:8080/rabta-tul-madaris_v1/';
 
 /*  no of records per page  */
 $config['per_page'] = 40;
 
 /* Base url for accessing the assets of the website is placed in the config_array*/
 
-$config['base_url_assets']	= 'http://localhost:8080/rabta-ul-madaris/assets/';
+$config['base_url_assets']	= 'http://localhost:8080/rabta-tul-madaris_v1/assets/';
 
 /*
 |--------------------------------------------------------------------------
